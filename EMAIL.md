@@ -15,15 +15,19 @@ Please find below the details and guidelines for accessing and using the server.
 
 ## Server Access
 
+**Credentials:**
+You will find the SSH private key file (`<KEY_NAME>`) and your password attached to this email.
+
 **Access Command:**
-Use the following command to access the server:
+Save the key file, set its permissions, and connect:
 
 ```
-ssh <USERNAME>@<SERVER_IP>
+chmod 600 <KEY_NAME>
+ssh -i <KEY_NAME> <USERNAME>@<SERVER_IP>
 ```
 
 **Password:**
-The password will be sent to you separately.
+The password is **only for sudo access** when absolutely necessary (see sudo guidelines below). It is not needed for SSH login.
 
 **Working Directory:**
 Please place your data and code in the following directory only:
@@ -45,9 +49,12 @@ Since this is a shared server environment, please adhere to the following guidel
 
 You have been granted sudo access to help you debug and correct errors without needing to contact the admin every time. Remember: **With Great Power, Comes Great Responsibility.**
 
+Your password (shared in this email) is **only to be used for sudo when absolutely necessary**. Do not use it for anything else.
+
 - **NEVER** run a command on the root directory or any system files in sudo mode.
 - **NEVER** run any command outside your working directory in sudo mode.
 - **BE EXTREMELY CAUTIOUS** when running any command in sudo mode — even within your working directory. Make sure you fully understand the command before executing it.
+- **IF IN DOUBT, DO NOT RUN IT.** Contact the admin instead.
 
 ---
 
